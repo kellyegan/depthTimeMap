@@ -3,17 +3,40 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
+  kinect.init();
+  kinect.open();
 
+  colorImg.allocate(kinect.width, kinect.height);
+  
+  depthMap.allocate(kinect.width, kinect.height);
+  depthMapThreshNear.allocate(kinect.width, kinect.height);
+  depthMapThreshFar.allocate(kinect.width, kinect.height);
+  
+  thresholdNear = 230;
+	thresholdFar  = 70;
+  
+  
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
-
+  kinect.update();
+  
+  if( kinect.isFrameNew() ) {
+    depthMap.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
+    /*
+    depthMapThreshNear = depthMap;
+    depthMapThreshFar = depthMap;
+    depthMapThreshNear.threshold(thresholdNear, true);
+    depthMapThreshFar.threshold(thresholdFar);
+    cvAnd(depthMapThreshNear.getCvImage(), depthMapThreshFar.getCvImage(), depthMap.getCvImage(), NULL);
+     */
+  }
 }
 
 //--------------------------------------------------------------
 void testApp::draw() {
-
+  depthMap.draw(0, 0, kinect.width, kinect.height);
 }
 
 //--------------------------------------------------------------

@@ -21,5 +21,16 @@ class testApp : public ofBaseApp {
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
+  
+    ofxKinect kinect;
+    
+    ofxCvColorImage		colorImg;
+  
+    ofxCvGrayscaleImage depthMap;			        // grayscale depth image
+    ofxCvGrayscaleImage depthMapThreshNear;		// the near thresholded image
+    ofxCvGrayscaleImage depthMapThreshFar;		// the far thresholded image
+  
+    int thresholdNear;
+    int thresholdFar;
 		
 };
