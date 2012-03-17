@@ -41,6 +41,7 @@
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		FBE957CF1512BDA000DBF19E /* ofxSlitScan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBE957CC1512BDA000DBF19E /* ofxSlitScan.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,8 @@
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		FBE957CC1512BDA000DBF19E /* ofxSlitScan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSlitScan.cpp; sourceTree = "<group>"; };
+		FBE957CD1512BDA000DBF19E /* ofxSlitScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSlitScan.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -577,6 +580,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				FBE957C81512BDA000DBF19E /* ofxSlitScan */,
 				30F2B5011415565D00597A7B /* ofxKinect */,
 				30F2B5961415565D00597A7B /* ofxOpenCv */,
 			);
@@ -657,6 +661,24 @@
 				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
 			);
 			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		FBE957C81512BDA000DBF19E /* ofxSlitScan */ = {
+			isa = PBXGroup;
+			children = (
+				FBE957CB1512BDA000DBF19E /* src */,
+			);
+			name = ofxSlitScan;
+			path = ../../../addons/ofxSlitScan;
+			sourceTree = SOURCE_ROOT;
+		};
+		FBE957CB1512BDA000DBF19E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FBE957CC1512BDA000DBF19E /* ofxSlitScan.cpp */,
+				FBE957CD1512BDA000DBF19E /* ofxSlitScan.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -763,6 +785,7 @@
 				30F2B70E1415565F00597A7B /* ofxCvHaarFinder.cpp in Sources */,
 				30F2B70F1415565F00597A7B /* ofxCvImage.cpp in Sources */,
 				30F2B7101415565F00597A7B /* ofxCvShortImage.cpp in Sources */,
+				FBE957CF1512BDA000DBF19E /* ofxSlitScan.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

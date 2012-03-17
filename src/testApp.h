@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
+#include "ofxSlitScan.h"
 
 class testApp : public ofBaseApp {
 	public:
@@ -23,14 +24,21 @@ class testApp : public ofBaseApp {
     void gotMessage(ofMessage msg);
   
     ofxKinect kinect;
+  
+  ofVideoPlayer video;
     
     ofxCvColorImage		colorImg;
   
     ofxCvGrayscaleImage depthMap;			        // grayscale depth image
     ofxCvGrayscaleImage depthMapThreshNear;		// the near thresholded image
     ofxCvGrayscaleImage depthMapThreshFar;		// the far thresholded image
+    ofxCvGrayscaleImage whiteImage;           // white image for creating inverse
   
     int thresholdNear;
     int thresholdFar;
+  
+    ofxSlitScan warp;
+  
+    bool depth, inverse, fullscreen;
 		
 };
