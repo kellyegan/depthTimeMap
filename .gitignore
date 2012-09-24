@@ -104,3 +104,5 @@ apps/*/*/obj
 apps/*/*/bin
 .csettings
 
+#App specific
+bin/data/Symptoms1940_deinterlaced.mov
